@@ -1,0 +1,133 @@
+﻿<div id='backgrnd'>
+    <div id='update'>
+        <table id='tblUpdate'>
+					<caption style=' margin 0px 0px 0px 0px;font-size:25px; background-color #33b5e5; border-radius:10px 10px 0px 0px; color white;'>
+            <b>FOL MACHINE STATUS</b></caption>
+            <thead>
+                <tr>
+                    <td colspan='4'><b>DATE / TIME: </b>".$dates."</td>
+                </tr>
+                <tr>
+            </thead>
+            <tbody>
+            <th>MACHINE PLATFORM:</th>
+            <td><input name='machinePF' id='machinePlatform' class='inputTxt' type='text' value='".$info[0]."' readonly style='background-color: #f3f3f3;' /></td>
+            <th hidden>MATERIALS TYPE:</th>
+            <td hidden>
+                <select class='inputSelect' disabled>
+                    <option value=''>GOLD WIRE</option>
+                    <option value=''>ALUMINUM WIRE</option>
+                    <option value=''>SOLDER WIRE</option>
+                    <option value=''>PREFORM</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+                <th>MACHINE ID:</th>
+                <td><input name='machineID' id='machineID' class='inputTxt' type='text' value='".$info[1]."' readonly style='background-color: #f3f3f3;' /></td>
+                <th hidden>MATERIAL ID:</th>
+                <td hidden><input class='inputTxt' type='text' name='material_id' disabled /></td>
+            </tr>
+            <tr>
+                <th>STATUS OWNER:</th>
+                <td>
+                    <select id='stsOwner' name='stsOwner' class='inputSelect'>
+                        <option value='".$info[4]."'>".$info[4]."</option>";
+                        include('../inc/statusOwner.php');
+                        echo "
+                    </select>
+                </td>
+                <th hidden>TOOL TYPE:</th>
+                <td hidden>
+                    <select id='' class='inputSelect' disabled>
+                        <option value=''>CAPILLARY</option>
+                        <option value=''>BLADE</option>
+                        <option value=''>NOZZLE</option>
+                        <option value=''>COLLET</option>
+                        <option value=''>INSERT AND CLAMP</option>
+                        <option value=''>SPANKER</option>
+                        <option value=''>DIE SET</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>STATUS:</th>
+                <td>
+                    <select id='stsDes' name='stsDes' class='inputSelect'>
+                        <option value='".$info[5]."'>".$info[5]."</option>";
+                        include('../inc/statsDesList.php');
+                        echo "
+                    </select>
+                </td>
+                <th hidden>TOOL ID:</th>
+                <td hidden><input class='inputTxt' type='text' /> disabled></td>
+            <tr></tr>
+            <th>FAMILY NAME:</th>
+            <td>
+                <select id='prodName' name='prodName' class='inputSelect'>
+                    <option value='".$info[6]."'>".$info[6]."</option>";
+                    include('../inc/prodNameList.php');
+                    echo "
+                </select>
+            </td>
+            <th>UPH:</th>
+            <td>
+                <select name='uph' id='uph_select' class='inputSelect' disabled>
+                    ";
+                    include('../inc/uph.php');
+                    echo "
+                </select>
+            </td>
+            <tr></tr>
+            <th>LOT NO:</th>
+            <td><input class='inputTxt' id='lotNo' name='lotNo' type='text' value='".$info[7]."' /></td>
+            <th hidden>LF TYPE:</th>
+            <td hidden><input class='inputTxt' name='lfName' type='text' /> disabled></td>
+            </tr>
+            <tr>
+                <th>PACKAGE TYPE:</th>
+                <td>
+                    <select id='pkgType' name='pkgType' readonly class='inputSelect' disabled>
+                        <option value='".$info[11]."'>".$info[11]."</option>";
+                        include('../inc/pkgType.php');
+                        echo "
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>REMARKS:</th>
+                <td colspan='3'><textarea id='remarks' rows='4' name='remarks' style='width: 600px;' maxlength='500'></textarea></td>
+            </tr>
+            <tr>
+                <th>GROUP:</th>
+                <td>
+                    <select id='group' name='group' class='inputSelect' style='width: 50px;'>
+                        <option value=''>A</option>
+                        <option value=''>B</option>
+                        <option value=''>C</option>
+                        <option value=''>RS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan='4' style='text-align: center;'>
+                    <select name='user' id='user' class='inputSelect' style='width: 150px;'>
+                        ";
+                        include('../inc/users.php');
+                        echo "
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan='4' style='text-align: center;'><input type='password' name='pass' id='pass' placeholder='PASSWORD' style='width: 150px;'></td>
+            </tr>
+            <tr>
+                <td colspan='4' style='text-align: center;'>
+                    <input id='save_fol' name='update' type='submit' value='UPDATE' />
+                    <input id='close' type='button' value='CLOSE' />
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
